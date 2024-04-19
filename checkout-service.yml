@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: checkout-service
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: localhost

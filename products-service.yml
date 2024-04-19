@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: products-service
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    statusPageUrlPath: http://localhost:8080/actuator/info
+    healthCheckUrlPath: http://localhost:8080/actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  info:
+    env:
+      enabled: true
+
+#Information exposed in actuator
+info:
+  name: products-service
+  description: products microservice
+  version: 1.0.0
